@@ -4,17 +4,17 @@ name: default
 
 steps:
   - name: restore
-    image: mcr.microsoft.com/dotnet/sdk:6.0
+    image: mcr.microsoft.com/dotnet/sdk:8.0
     commands:
       - dotnet restore ./Calculator/Calculator.csproj
 
   - name: build
-    image: mcr.microsoft.com/dotnet/sdk:6.0
+    image: mcr.microsoft.com/dotnet/sdk:8.0
     commands:
       - dotnet build --no-restore -c Release ./Calculator/Calculator.csproj
 
   - name: test
-    image: mcr.microsoft.com/dotnet/sdk:6.0
+    image: mcr.microsoft.com/dotnet/sdk:8.0
     commands:
       - dotnet test --no-restore --verbosity normal ./Calculator.Tests/Calculator.Tests.csproj
 
