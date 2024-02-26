@@ -1,0 +1,10 @@
+﻿version: '3.8'
+
+services:
+  app:
+    image: calculator-docker 
+    build: .  
+    environment:
+      - calcConnStr=${calcConnStr}  
+    ports:
+      - "8000:80"  
