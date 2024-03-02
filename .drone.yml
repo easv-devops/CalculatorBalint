@@ -6,8 +6,9 @@ steps:
   - name: restore
     image: mcr.microsoft.com/dotnet/sdk:latest
     commands:
+      - dotnet nuget locals all --clear
       - nuget restore Calculator.sln
-      - dotnet restore ./Calculator/Calculator.csproj --verbosity detailed      
+      - dotnet restore ./Calculator/Calculator.csproj --verbosity detailed     
 
   - name: build
     image: mcr.microsoft.com/dotnet/sdk:latest
