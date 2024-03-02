@@ -1,10 +1,10 @@
 ﻿# official image as a parent image
-FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS base
+FROM mcr.microsoft.com/dotnet/aspnet:latest AS base
 WORKDIR /app
 EXPOSE 80
 
 # SDK image to build the application
-FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
+FROM mcr.microsoft.com/dotnet/sdk:latest AS build
 WORKDIR /src
 COPY ["Calculator/Calculator.csproj", "Calculator/"]
 RUN dotnet restore "Calculator/Calculator.csproj"
